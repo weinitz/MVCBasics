@@ -7,6 +7,10 @@ body {
     height:100%;
     padding: 0;
     margin: 0;
+    background: #383a59;
+    color: #f2f2f2;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
 }
 
 * {
@@ -60,6 +64,8 @@ nav {
 }
 
 .navLinks {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 500;;
     font-size: 1.2em;
     text-transform: uppercase;
     text-decoration: none;
