@@ -1,8 +1,20 @@
-﻿@model object
+﻿@model List<Assignment1.Models.ProjectViewModel>
 
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
 
+
 <h2>Projects</h2>
+@foreach (var project in Model)
+{
+    <div>
+        <h2>
+            <a href="@project.Url">@project.Title</a>
+        </h2>
+        <p>
+            @project.Description
+        </p>
+    </div>
+}
