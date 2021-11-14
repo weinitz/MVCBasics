@@ -1,0 +1,20 @@
+﻿@model object
+
+@{
+    ViewBag.Title = "Guessing game";
+    Layout = "_Layout";
+}
+
+<h2>Guess a number 1-100</h2>
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}
+else
+{
+    <form asp-controller="GuessingGame" asp-action="Index" method="post">
+        <label>Guess number:</label>
+        <input type="number" name="number"/>
+        <input type="submit" value="Send"/>
+    </form>
+}
