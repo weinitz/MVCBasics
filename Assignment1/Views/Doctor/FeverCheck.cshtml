@@ -1,0 +1,20 @@
+﻿@model object
+
+@{
+    ViewBag.Title = "Doctor";
+    Layout = "_Layout";
+}
+
+<h2>Doctor</h2>
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}
+else
+{
+    <form asp-controller="Doctor" asp-action="FeverCheck" method="post">
+        <label>temperature:</label>
+        <input type="number" name="temperature"/>
+        <input type="submit" value="Send"/>
+    </form>
+}

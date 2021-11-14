@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Assignment1.Controllers;
 
 namespace Assignment1
 {
@@ -32,6 +33,11 @@ namespace Assignment1
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "FeverCheck",
+                    pattern: "FeverCheck/{temperature?}",
+                    new { Controller = "Doctor", Action = "FeverCheck" }
+                );
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}"
