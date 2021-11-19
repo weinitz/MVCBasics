@@ -10,11 +10,9 @@
 {
     <p>@ViewBag.Message</p>
 }
-else
-{
+
     <form asp-controller="GuessingGame" asp-action="Index" method="post">
         <label>Guess number:</label>
         <input type="number" name="number"/>
         <input type="submit" value="Send"/>
     </form>
-}

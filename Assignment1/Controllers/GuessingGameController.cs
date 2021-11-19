@@ -23,10 +23,17 @@ namespace Assignment1.Controllers
         [HttpPost]
         public IActionResult Index(int number)
         {
-            var correct = number == HttpContext.Session.GetInt32("randomNumber");
-            ViewBag.Message = correct ? "Correct" : "Wrong number";
-            if(correct)
+            var randomNumber = HttpContext.Session.GetInt32("randomNumber");
+            var correct = number == randomNumber;
+            if (correct)
+            {
                 SetRandomNumber();
+                ViewBag.Message = "Correct";
+            }
+            else
+            {
+                ViewBag.Message = number < randomNumber ? "Your guess is to low." : "your guess is to high";
+            }
             return View();
         }
     }
